@@ -1,0 +1,13 @@
+{
+  "name": "integration-example-dagger-nodejs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  "dotenv-vault-core": "^0.3.0"
+  }
+}
