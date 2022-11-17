@@ -31,11 +31,11 @@ func doCi() error {
 	// initialize new container from npm image
 	container := client.Container().From("node")
 
-  // load env variables
-  container = container.WithEnvVariable("DOTENV_KEY", "dotenv://:key_828fe6f34bf06d690ca21eab39b2efc80e5466f412058cc156352ec0d5556a87@dotenv.org/vault/.env.vault?environment=ci")
+   	// load env variables
+ 	container = container.WithEnvVariable("DOTENV_KEY", os.Getenv("DOTENV_KEY"))
 
 	// mount source directory to /src
-  container = container.WithMountedDirectory("/src", src).WithWorkdir("/src")
+  	container = container.WithMountedDirectory("/src", src).WithWorkdir("/src")
 
 	// execute npm install
 	container = container.Exec(dagger.ContainerExecOpts{
